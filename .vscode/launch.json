@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "node-terminal",
+            "name": "Run Script: cleanup-reports",
+            "request": "launch",
+            "command": "npm run cleanup-reports",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

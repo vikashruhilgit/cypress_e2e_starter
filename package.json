@@ -1,0 +1,40 @@
+{
+    "name": "ui-automated-testing",
+    "version": "1.0.0",
+    "description": "Automated UI testing for Innovations regression testinging.",
+    "main": "index.js",
+    "scripts": {
+        "prepare:clean": "node ./utilities/cleanup-reports.js",
+        "combine:output": "node ./utilities/prepare-reports.js",
+        "combine:reports": "jrm results/combined-report.xml \"results/*.xml\"",
+        "cypress": "run-s prepare:** run",
+        "open:dev":"env-cmd -e dev cypress open",
+        "open:local":"env-cmd -e local cypress open",
+        "produce:reports": "run-p combine:**",
+        "run": "cypress run",
+        "run:pa": "cypress run --spec cypress/e2e/payment-center/**/*.ts",
+        "run:pa:ci": "cypress run --spec cypress/e2e/payment-center/**/*.ts --browser chrome --reporter junit --reporter-options mochaFile=results/test-result-[hash].xml,toConsole=true",
+        "test:pa": "run-s prepare:** run:pa",
+        "test:pa:ci": "run-s prepare:** run:pa:ci"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@testing-library/cypress": "^9.0.0",
+        "@typescript-eslint/eslint-plugin": "^6.4.0",
+        "@typescript-eslint/parser": "^6.4.0",
+        "cypress": "^12.17.4",
+        "cypress-mochawesome-reporter": "^3.5.1",
+        "cypress-sql-server": "^1.0.0",
+        "env-cmd": "^10.1.0",
+        "eslint": "^8.47.0",
+        "fs-extra": "^11.1.1",
+        "junit-report-merger": "^6.0.2",
+        "npm-run-all": "^4.1.5"
+    },
+    "dependencies": {
+        "faker": "^6.6.6",
+        "typescript": "^5.1.6"
+    }
+}
