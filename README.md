@@ -1,6 +1,6 @@
-# Innovations Automated UI Tests - Cypress Test Suite
+# Innovations Automated UI Tests - Cypress Test Suite - Reference App
 
-This repository contains a comprehensive Cypress test suite to automate end-to-end tests for Payments Anywhere (Payment Center) and the Walk-in/Agents applications.
+This repository contains a comprehensive Cypress test suite to automate end-to-end tests for testnode1  and the testnode2 applications.
 
 ## Table of Contents
 
@@ -43,7 +43,7 @@ For testing from Cypress UI view enter execute `npx cypress open` in this direct
 
 Tests can be run from the command line in a "headless" browser. These tests are split into sections based on Payment Center and Walk-in/Agents:
 
-* Run `npm run test:pa` to execute tests against all Payment Center clients.
-* Run `npm run test:agents` to execute tests agains the Walk-in/Agents app.
+* Run `npm run test:app1` to execute tests against all testnodeapp1 clients.
+* Run `npm run test:app2` to execute tests agains the testnodeapp2.
 
-*Note, the Walk-in/Agents app is currently tailored to USCC. The log-in process is reliant on their IdP such that it makes writing reliable test cases impossible.*
+

@@ -1,7 +1,7 @@
 {
   "name": "cypres-e2e-starter",
   "version": "1.0.0",
-  "description": "Automated UI testing with cypress",
+  "description": "Automated UI testing with cypress - Reference app",
   "main": "index.js",
   "repository": "https://github.com/vikashruhilgit/Ruhil-UI.git",
   "author": "Vikash Ruhil <v_ruhil@yahoo.com>",
@@ -15,10 +15,10 @@
     "open:local": "env-cmd -e local cypress open",
     "produce:reports": "run-p combine:**",
     "run": "cypress run",
-    "run:pa": "cypress run --spec cypress/e2e/payment-center/**/*.ts",
-    "run:pa:ci": "cypress run --spec cypress/e2e/payment-center/**/*.ts --browser chrome --reporter junit --reporter-options mochaFile=results/test-result-[hash].xml,toConsole=true",
-    "test:pa": "run-s prepare:** run:pa",
-    "test:pa:ci": "run-s prepare:** run:pa:ci"
+    "run:app1": "cypress run --spec cypress/e2e/payment-center/**/*.ts",
+    "run:app1:ci": "cypress run --spec cypress/e2e/payment-center/**/*.ts --browser chrome --reporter junit --reporter-options mochaFile=results/test-result-[hash].xml,toConsole=true",
+    "test:app1": "run-s prepare:** run:pa",
+    "test:app1:ci": "run-s prepare:** run:pa:ci"
   },
   "keywords": [],
   "devDependencies": {
