@@ -1,4 +1,4 @@
-import { host } from "@fixtures/payment-center/env.json";
+import { host } from "@fixtures/testNode1/env.json";
 
 describe("Busey Loan Pay guest payment flow", () => {
   it("should have the guest payment button on the landing page.", () => {

@@ -5,7 +5,7 @@ export interface Auth0Configuration {
 }
 
 export interface DbNames {
-  paymentCenter: string;
+  testnode1: string;
 }
 
 export interface DatabaseConfiguration {
@@ -16,7 +16,7 @@ export interface DatabaseConfiguration {
   dbNames: DbNames
 }
 
-export interface PaymentCenterConfiguration {
+export interface testnode1Configuration {
   host: string;
   testUserUsername: string;
   testUserPassword: string;
@@ -25,5 +25,5 @@ export interface PaymentCenterConfiguration {
 export interface EnvironmentConfiguration {
   auth0: Auth0Configuration;
   db: DatabaseConfiguration;
-  paymentCenter: PaymentCenterConfiguration;
+  testNode1: testnode1Configuration;
 }

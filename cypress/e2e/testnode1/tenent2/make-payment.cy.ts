@@ -1,21 +1,21 @@
-import { PaymentCenterConfiguration } from "support/configuration";
+import { testnode1Configuration } from "support/configuration";
 
 context("Make a payment end-to-end", () => {
-  let paymentCenterConfiguration: PaymentCenterConfiguration;
+  let testnode1Configuration: testnode1Configuration;
 
   before(() => {
-    paymentCenterConfiguration = Cypress.env(
-      "paymentCenter"
-    ) as PaymentCenterConfiguration;
+    testnode1Configuration = Cypress.env(
+      "testnode1"
+    ) as testnode1Configuration;
   });
 
   beforeEach(() => {
-    cy.paymentCenterLogin(
-      `${paymentCenterConfiguration.host}city-of-decatur/dashboard`,
-      paymentCenterConfiguration.testUserUsername,
-      paymentCenterConfiguration.testUserPassword
+    cy.testnode1Login(
+      `${testnode1Configuration.host}path/dashboard`,
+      testnode1Configuration.testUserUsername,
+      testnode1Configuration.testUserPassword
     );
-    cy.visit(`${paymentCenterConfiguration.host}city-of-decatur/dashboard`);
+    cy.visit(`${testnode1Configuration.host}path/dashboard`);
   });
 
   it.only("Make a payment", () => {

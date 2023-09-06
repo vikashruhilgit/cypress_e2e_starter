@@ -6,13 +6,13 @@ import { Dictionary } from "cypress/types/lodash";
 
 const dbNames: Dictionary<DbNames> = {
   localhost: {
-    paymentCenter: "db-dev-cus-paymentcenter",
+    testnode1: "db-dev-cus-testnode1",
   },
-  "rg-dev-cus-billersvc.database.windows.net": {
-    paymentCenter: "db-dev-cus-paymentcenter",
+  "stage": {
+    testnode1: "db-dev-cus-testnode1",
   },
-  "azsql-qa-cus-innovation.database.windows.net": {
-    paymentCenter: "db-qa-cus-paymentcenter",
+  "production": {
+    testnode1: "db-qa-cus-testnode1",
   },
 };
 
@@ -24,10 +24,10 @@ const envConfig: EnvironmentConfiguration = {
   db: {
     userName: process.env.CONNECTION_USERNAME
       ? process.env.CONNECTION_USERNAME
-      : "sa",
+      : "USERNAME",
     password: process.env.CONNECTION_PASSWORD
       ? process.env.CONNECTION_PASSWORD
-      : "titan#12",
+      : "PASSWORD",
     server: server,
     options: {
       database: "",
@@ -41,18 +41,18 @@ const envConfig: EnvironmentConfiguration = {
   auth0: {
     host: process.env.AUTH0_HOST
       ? process.env.AUTH0_HOST
-      : "https://dev-login.1tech.net/",
+      : "https://Your app URL/",
   },
-  paymentCenter: {
+  testNode1: {
     host: process.env.PAYMENT_CENTER_HOST
       ? process.env.PAYMENT_CENTER_HOST
-      : "https://payments-dev.1tech.net/",
+      : "https://HOSTNAME/",
     testUserPassword: process.env.PAYMENT_CENTER_TEST_USER_PASSWORD
       ? process.env.PAYMENT_CENTER_TEST_USER_PASSWORD
-      : "Titan#12",
+      : "PASSWORD",
     testUserUsername: process.env.PAYMENT_CENTER_TEST_USER_USERNAME
       ? process.env.PAYMENT_CENTER_TEST_USER_USERNAME
-      : "tim@apple.com",
+      : "USERNAME",
   },
 };
 

@@ -1,25 +1,25 @@
-import { PaymentCenterConfiguration } from "support/configuration";
+import { testnode1Configuration } from "support/configuration";
 
 function getRandomNumber(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 describe("scheduling a pyament", () => {
-    let paymentCenterConfiguration: PaymentCenterConfiguration;
+    let testnode1Configuration: testnode1Configuration;
 
     before(() => {
-      paymentCenterConfiguration = Cypress.env(
-        "paymentCenter"
-      ) as PaymentCenterConfiguration;
+      testnode1Configuration = Cypress.env(
+        "testnode1"
+      ) as testnode1Configuration;
     });
   
     beforeEach(() => {
-      cy.paymentCenterLogin(
-        `${paymentCenterConfiguration.host}city-of-decatur/dashboard`,
-        paymentCenterConfiguration.testUserUsername,
-        paymentCenterConfiguration.testUserPassword
+      cy.testnode1Login(
+        `${testnode1Configuration.host}city-of-decatur/dashboard`,
+        testnode1Configuration.testUserUsername,
+        testnode1Configuration.testUserPassword
       );
-      cy.visit(`${paymentCenterConfiguration.host}city-of-decatur/dashboard`);
+      cy.visit(`${testnode1Configuration.host}city-of-decatur/dashboard`);
     });
 
     it("should successfuly create a scheduled payment for an \"other\" amount", () => {

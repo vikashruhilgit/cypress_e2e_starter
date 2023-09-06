@@ -138,7 +138,7 @@ describe("the sign-up process", () => {
         // cy.findByLabelText('Next').click()
 
         cy.sqlServer(
-          dbConfiguration.dbNames.paymentCenter,
+          dbConfiguration.dbNames.testnode1,
           "SELECT TOP 1 AI.AccountNumber, AICP.[Value] AS CID FROM AccountInformation AI JOIN AccountInformationCustomProperties AICP ON AI.Id = AICP.AccountInformationId AND AICP.PropertyKey = 'CID' WHERE AI.ClientId = 5 AND AI.Active = 1 AND AI.UserId IS NULL ORDER BY NEWID()"
         ).then(function (result) {
           const accountNumber = result[0];

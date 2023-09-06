@@ -29,7 +29,7 @@ import { sqlQueryCommand } from "../multiple-db-sql-server";
 import { Auth0Configuration } from "./configuration";
 sqlQueryCommand();
 
-function paymentCenterAuth0Login(
+function testNode1Auth0Login(
   auth0Config: Auth0Configuration,
   url: string,
   username: string,
@@ -61,7 +61,7 @@ function paymentCenterAuth0Login(
 }
 
 Cypress.Commands.add(
-  "paymentCenterLogin",
+  "testnode1Login",
   (url: string, username: string, password: string) => {
     const auth0Config = Cypress.env("auth0") as Auth0Configuration;
 
@@ -80,12 +80,17 @@ Cypress.Commands.add(
     cy.session(
       [username, password],
       () => {
-        paymentCenterAuth0Login(auth0Config, url, username, password);
-
+        testNode1Auth0Login(auth0Config, url, username, password);
+        // URl after login like : /dashboard
         cy.url().should("contain", "/dashboard");
       },
       {
         validate: () => {
+
+          /* test your condition for validation
+          *   Validating the login condition what ever your app supoprt
+          */
+
           for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
             if (key.startsWith("@@auth0spajs@@") && !key.endsWith("@@user@@")) {

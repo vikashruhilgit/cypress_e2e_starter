@@ -1,6 +1,6 @@
 declare namespace Cypress {
     interface Chainable<Subject> {
-        paymentCenterLogin(url: string, username: string, password: string): Chainable<any>;
+        testnode1Login(url: string, username: string, password: string): Chainable<any>;
 
         agentsLogin(url: string, location: string, username: string, password: string): Chainable<any>;
 
